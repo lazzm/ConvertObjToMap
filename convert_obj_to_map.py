@@ -21,12 +21,9 @@ class Model:
 
 class Main:
     def __init__(self):
-        # Define input and output directories
-        self.obj_input_dir = "input"
-        self.map_output_dir = "output"
-
-        # Get list of obj files in input directory
-        self.obj_files = [f for f in os.listdir(self.obj_input_dir) if f.endswith(".obj")]
+        # Get list of obj files in root directory
+        self.obj_files = [f for f in os.listdir() if f.endswith(".obj")]
+        
 
     def convert(self):
         for obj_file in self.obj_files:
@@ -37,7 +34,7 @@ class Main:
             print("Completed. New file:", obj_file.replace(".obj", ".map"))
 
     def read_obj_file(self, obj_file, model):
-        with open(os.path.join(self.obj_input_dir, obj_file), "r") as obj_file:
+        with open(os.path.join(obj_file), "r") as obj_file:
             for line in obj_file:
 
                 # Check if line is a vertex
@@ -62,7 +59,7 @@ class Main:
                     model.faces.append(face)
 
     def write_map_file(self, obj_file, model):
-        with open(os.path.join(self.map_output_dir, obj_file.replace(".obj", ".map")), "w") as map_file:
+        with open(os.path.join(obj_file.replace(".obj", ".map")), "w") as map_file:
 
             # Write header            
             map_file.write("iwmap 4\n"
