@@ -23,3 +23,11 @@ Download from the Python Official Website: [Download Python](https://www.python.
 2. Extract the source code.
 3. Place the .obj files and the .py file into the same directory.
 4. Run the python script which will convert the files to map format and create the new files in the same directory.
+
+
+
+Hoping that future versions of this will provide the ability to retain the material information per face and the UV data.
+This was looked into and the issue is that I'm not sure how Radian't works with its UVs so they are never correct. 
+I'm hoping that I can find any information or figure out what conversion needs doing to UVs within an OBJ to this map format.
+
+If there is any information you might know regarding Radiant and how it uses .map files, please let me know.
